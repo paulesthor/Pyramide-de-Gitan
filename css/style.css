@@ -1,0 +1,438 @@
+/* public/css/style.css */
+
+/* Variables CSS */
+:root {
+    --primary-color: #e74c3c; /* Rouge gitan */
+    --secondary-color: #f39c12; /* Jaune/Orange */
+    --background-color: #34495e; /* Bleu foncé/gris */
+    --card-background: #ffffff; /* Blanc pour la carte principale */
+    --text-color: #2c3e50; /* Texte foncé */
+    --light-text-color: #ecf0f1; /* Texte clair */
+    --border-radius: 8px;
+    --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    --font-montserrat: 'Montserrat', sans-serif;
+    --font-playfair: 'Playfair Display', serif;
+}
+
+/* Réinitialisation de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-montserrat);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden; /* Empêche le défilement horizontal */
+    position: relative;
+}
+
+/* Overlay pour le fond */
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #2c3e50, #34495e, #1c2833); /* Dégradé de bleu-gris */
+    opacity: 0.9;
+    z-index: -1;
+}
+
+/* Conteneur principal */
+.container {
+    width: 100%;
+    max-width: 600px; /* Taille maximale pour une bonne lisibilité */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1; /* S'assure que le contenu est au-dessus de l'overlay */
+}
+
+/* En-tête */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--light-text-color);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.logo i {
+    font-size: 3em;
+    color: var(--primary-color);
+}
+
+header h1 {
+    font-family: var(--font-playfair);
+    font-size: 3.5em;
+    font-weight: 700;
+    line-height: 1;
+}
+
+header h1 span {
+    color: var(--secondary-color);
+}
+
+.subtitle {
+    font-size: 1.2em;
+    margin-top: 5px;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* Carte principale (main.card) */
+.card {
+    background-color: var(--card-background);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.card h2 {
+    font-family: var(--font-playfair);
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    font-size: 2em;
+}
+
+/* Profile Setup Section */
+.profile-setup {
+    margin-bottom: 20px;
+}
+
+.avatar-upload {
+    margin-bottom: 25px;
+}
+
+.avatar-upload input[type="file"] {
+    display: none; /* Cache l'input par défaut */
+}
+
+.avatar-upload label {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.avatar-preview {
+    width: 100px;
+    height: 100px;
+    background-color: #ecf0f1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 0 auto 10px auto;
+    border: 3px solid var(--secondary-color);
+    transition: all 0.3s ease;
+}
+
+.avatar-preview:hover {
+    box-shadow: 0 0 0 5px rgba(243, 156, 18, 0.5); /* Effet lumineux au survol */
+}
+
+.avatar-preview i {
+    font-size: 3em;
+    color: var(--text-color);
+}
+
+.avatar-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hint {
+    font-size: 0.9em;
+    color: #7f8c8d;
+}
+
+/* Input Group (pour username et game ID) */
+.input-group {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    background-color: #ecf0f1;
+}
+
+.input-group i {
+    color: #7f8c8d;
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.input-group input {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    padding: 5px 0;
+    font-size: 1em;
+    color: var(--text-color);
+    background-color: transparent;
+}
+
+.input-group input::placeholder {
+    color: #bdc3c7;
+}
+
+/* Boutons */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.btn i {
+    font-size: 1.2em;
+}
+
+.btn-create {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+}
+
+.btn-create:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+}
+
+.btn-join {
+    background-color: var(--secondary-color);
+    color: var(--light-text-color);
+}
+
+.btn-join:hover {
+    background-color: #e67e22;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(243, 156, 18, 0.4);
+}
+
+.btn-confirm {
+    background-color: #27ae60; /* Vert */
+    color: var(--light-text-color);
+}
+
+.btn-confirm:hover {
+    background-color: #229954;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
+}
+
+.btn-start {
+    background-color: #3498db; /* Bleu */
+    color: var(--light-text-color);
+}
+
+.btn-start:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}
+
+.btn-secondary {
+    background-color: #95a5a6; /* Gris neutre */
+    color: var(--light-text-color);
+}
+
+.btn-secondary:hover {
+    background-color: #7f8c8d;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(149, 165, 166, 0.4);
+}
+
+/* Formulaire Rejoindre */
+#join-form {
+    margin-top: 20px;
+}
+#join-form .btn {
+    margin-top: 15px; /* Espace entre l'input et les boutons */
+}
+#join-form .btn + .btn { /* Pour le bouton annuler */
+    margin-left: 10px;
+}
+
+
+/* Informations Partie Créée */
+.game-created-info {
+    margin-top: 20px;
+}
+
+.game-created-info h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #28a745; /* Vert pour le succès */
+}
+
+.game-created-info p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+.host-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 15px;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    box-shadow: inset 0 1px 5px rgba(0,0,0,0.1);
+}
+
+.player-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #ecf0f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: 2px solid var(--primary-color);
+}
+
+.player-avatar i {
+    font-size: 2.5em;
+    color: #7f8c8d;
+}
+
+.player-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.player-name {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.game-id-display {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    font-family: 'Courier New', monospace;
+    font-size: 2.2em;
+    font-weight: 700;
+    padding: 15px 25px;
+    border-radius: var(--border-radius);
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+    display: inline-block; /* Pour que le padding et border-radius s'appliquent bien */
+    box-shadow: var(--box-shadow);
+}
+
+/* Messages d'erreur et de succès */
+.message {
+    padding: 10px 15px;
+    border-radius: var(--border-radius);
+    margin-top: 15px;
+    font-weight: 600;
+    text-align: center;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.message.hidden {
+    opacity: 0;
+    /* Pour que l'élément n'occupe plus d'espace et ne soit pas cliquable */
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+.message.error {
+    background-color: #e74c3c;
+    color: var(--light-text-color);
+}
+
+.message.success {
+    background-color: #28a745; /* Vert vif */
+    color: var(--light-text-color);
+}
+
+
+/* Utilitaires */
+.hidden {
+    display: none !important;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #bdc3c7;
+    font-size: 0.9em;
+}
+
+footer .decoration {
+    margin-top: 10px;
+}
+
+footer .decoration i {
+    margin: 0 8px;
+    color: var(--secondary-color);
+    font-size: 1.5em;
+}
+
+/* Media Queries pour la réactivité */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2.8em;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .btn {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+
+    .game-id-display {
+        font-size: 1.8em;
+        padding: 10px 20px;
+    }
+}

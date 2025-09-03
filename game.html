@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Pyramide des Gitans</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+    <div class="mobile-container">
+        <!-- Header mobile -->
+        <header class="mobile-header">
+            <div class="game-info-mobile">
+                <div class="game-id-mobile">Partie: <span id="game-id-mobile">ABC123</span></div>
+                <div class="turn-info-mobile">Tour: <span id="current-turn-mobile">Joueur1</span></div>
+            </div>
+            <button id="menu-toggle" class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+        </header>
+
+        <!-- Zone de jeu principale -->
+        <main class="game-main-area">
+            <!-- Pyramide -->
+            <section class="pyramid-section">
+                <h2 class="section-title"><i class="fas fa-crown"></i> Pyramide</h2>
+                <div id="pyramid-container" class="pyramid-cards">
+                    <!-- Pyramide générée dynamiquement -->
+                </div>
+            </section>
+
+            <!-- Cartes du joueur -->
+            <section class="player-cards-section">
+                <h2 class="section-title"><i class="fas fa-hand-paper"></i> Tes cartes</h2>
+                <div id="player-hand" class="player-hand">
+                    <!-- Cartes ajoutées dynamiquement -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Actions contextuelles -->
+        <div id="contextual-actions">
+            <div class="action-title" id="action-title">Devine ta carte :</div>
+            <div class="dynamic-buttons" id="dynamic-buttons">
+                <!-- Boutons générés dynamiquement -->
+            </div>
+        </div>
+
+        <!-- Modale choix joueur cible -->
+        <div id="target-modal" class="modal hidden">
+            <div class="modal-content">
+                <h3>Donner <span id="sips-count">1</span> gorgée à :</h3>
+                <div id="target-players" class="target-options">
+                    <!-- Joueurs ajoutés dynamiquement -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Panneau latéral mobile -->
+        <aside id="mobile-sidebar" class="mobile-sidebar">
+            <div class="sidebar-header">
+                <h3>Infos partie</h3>
+                <button id="close-sidebar" class="close-btn"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <div class="players-list">
+                <h4><i class="fas fa-users"></i> Joueurs</h4>
+                <div id="players-container">
+                    <!-- Liste des joueurs dynamique -->
+                </div>
+            </div>
+            
+            <div class="game-chat">
+                <h4><i class="fas fa-comments"></i> Chat</h4>
+                <div id="chat-messages" class="chat-messages"></div>
+                <div class="chat-input">
+                    <input type="text" id="chat-input-mobile" placeholder="Écrire un message..." maxlength="100">
+                    <button id="send-chat-mobile"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+            
+            <button id="leave-game-mobile" class="leave-btn"><i class="fas fa-door-open"></i> Quitter</button>
+        </aside>
+
+        <!-- Toast notification -->
+        <div id="toast-notification" class="toast hidden">
+            <div class="toast-content"></div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>
