@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Pyramide - Distribution</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="page-jeu">
+
+    <header class="mobile-header">
+        <div class="game-info">
+            <span>Partie: <strong id="game-id-mobile">...</strong></span>
+            <span>Tour: <strong id="current-turn-mobile">...</strong></span>
+        </div>
+        <button id="menu-toggle" class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+    </header>
+
+    <div class="container">
+        <main class="content">
+            <section class="player-cards-section">
+                <h2 class="section-title">Vos Cartes</h2>
+                <div id="player-hand" class="player-hand-main"></div>
+            </section>
+            <section class="pyramid-section">
+                <h2 class="section-title">Aperçu de la Pyramide</h2>
+                <div id="pyramid-container" class="pyramid-area"></div>
+            </section>
+        </main>
+    </div>
+
+    <div id="contextual-actions" class="contextual-actions">
+        <div id="action-title" class="action-title"></div>
+        <div id="dynamic-buttons" class="dynamic-buttons"></div>
+    </div>
+    
+    <div id="toast-notification" class="toast"><span class="toast-content"></span></div>
+
+    <aside id="mobile-sidebar" class="mobile-sidebar">
+        <div class="sidebar-header">
+            <h3>Menu du Jeu</h3>
+            <button id="close-sidebar" class="close-btn"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="players-list-sidebar">
+            <h4>Joueurs</h4>
+            <div id="players-container"></div>
+        </div>
+        <div class="chat-container">
+            <h4>Chat</h4>
+            <div id="chat-messages" class="chat-messages"></div>
+            <div class="chat-input-area">
+                <input type="text" id="chat-input-mobile" placeholder="Message...">
+                <button id="send-chat-mobile"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+        <button id="leave-game-mobile" class="leave-btn">Quitter la partie</button>
+    </aside>
+
+    <div id="target-modal" class="modal hidden">
+        <div class="modal-content">
+            <h3>Donner <span id="sips-count"></span> gorgée(s) à :</h3>
+            <div id="target-players" class="target-options"></div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>

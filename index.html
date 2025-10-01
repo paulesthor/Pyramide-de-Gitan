@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apéro Games - Choisissez votre jeu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body id="page-lobby-main">
+    <div class="background-overlay"></div>
+
+    <header class="lobby-header">
+        <h1>Jeu de <span>Gitans</span></h1>
+        <p>Des jeux pour se retourner la caboche en tout bien tout honneur.</p>
+    </header>
+
+    <main class="container">
+        <div class="game-selection-container">
+
+            <div class="game-card">
+                <div class="game-card-background" style="background-image: url('pyramide.png');"></div>
+                <div class="game-card-content">
+                    <div class="game-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h2>La Pyramide</h2>
+                    <br/>
+                    <a href="lobbypyramide.html" class="btn-play">
+                        <span>Jouer</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="game-card coming-soon">
+                <div class="game-card-background" style="background-image: url('https://i.imgur.com/eF4Z3f3.jpeg');"></div>
+                <div class="game-card-content">
+                    <div class="game-icon">
+                        <i class="fas fa-dice"></i>
+                    </div>
+                    <h2>Le Bizkit</h2>
+                    <p>Un jeu de dés simple et dévastateur où chaque chiffre a sa propre règle.</p>
+                    <a href="#" class="btn-play" disabled>
+                        <span>Bientôt disponible</span>
+                        <i class="fas fa-hourglass-half"></i>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <footer class="lobby-footer">
+        <p>L'abus d'alcool est recommandé par les collègues. Écoutez-les avec grande attention.</p>
+    </footer>
+</body>
+</html>

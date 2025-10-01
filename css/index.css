@@ -1,0 +1,198 @@
+/* css/index.css */
+
+:root {
+    --primary-color: #e74c3c;
+    --secondary-color: #f39c12;
+    --background-dark: #2c3e50;
+    --text-light: #ecf0f1;
+    --font-montserrat: 'Montserrat', sans-serif;
+    --font-playfair: 'Playfair Display', serif;
+    --border-radius-large: 12px;
+    --box-shadow-heavy: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body#page-lobby-main {
+    font-family: var(--font-montserrat);
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(160deg, #1d2b3a, #2c3e50 80%);
+    z-index: -1;
+}
+
+.lobby-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeInDown 1s ease-out;
+}
+
+.lobby-header h1 {
+    font-family: var(--font-playfair);
+    font-size: clamp(2.5rem, 10vw, 4rem);
+    font-weight: 700;
+    color: var(--text-light);
+    letter-spacing: 1px;
+}
+
+.lobby-header h1 span {
+    color: var(--secondary-color);
+}
+
+.lobby-header p {
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    color: var(--text-light);
+    opacity: 0.8;
+    margin-top: 0.5rem;
+}
+
+.game-selection-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.game-card {
+    position: relative;
+    border-radius: var(--border-radius-large);
+    overflow: hidden;
+    box-shadow: var(--box-shadow-heavy);
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+.game-card:nth-child(2) { animation-delay: 0.2s; }
+
+.game-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.game-card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.4s ease;
+}
+
+.game-card:hover .game-card-background {
+    transform: scale(1.05);
+}
+
+.game-card-content {
+    position: relative;
+    z-index: 2;
+    padding: 1.5rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 20%, rgba(0, 0, 0, 0));
+    color: white;
+    text-align: center;
+}
+
+.game-icon {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.game-card h2 {
+    font-family: var(--font-playfair);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.game-card p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    min-height: 4.5em; /* Ensure consistent height */
+}
+
+.btn-play {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-play:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+
+/* Style pour la carte "Bientôt disponible" */
+.game-card.coming-soon {
+    filter: grayscale(80%);
+}
+
+.game-card.coming-soon .game-card-background {
+    filter: blur(2px);
+}
+
+.game-card.coming-soon .btn-play {
+    background-color: #7f8c8d;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.game-card.coming-soon:hover {
+    transform: none;
+    box-shadow: var(--box-shadow-heavy);
+}
+
+.lobby-footer {
+    margin-top: 3rem;
+    font-size: 0.8rem;
+    color: var(--text-light);
+    opacity: 0.6;
+    text-align: center;
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

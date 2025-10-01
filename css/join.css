@@ -1,0 +1,297 @@
+/* public/css/join.css - Version mobile first */
+
+:root {
+    --primary-color: #e74c3c;
+    --secondary-color: #f39c12;
+    --background-color: #34495e;
+    --card-background: #ffffff;
+    --text-color: #2c3e50;
+    --light-text-color: #ecf0f1;
+    --success-color: #2ecc71;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Reset et base mobile */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    min-height: 100vh;
+    position: relative;
+    line-height: 1.4;
+    overflow-x: hidden;
+}
+
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #2c3e50, #34495e, #1c2833);
+    opacity: 0.9;
+    z-index: -1;
+}
+
+.container {
+    width: 100%;
+    max-width: 100%;
+    padding: 15px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header optimisé mobile */
+.header-mobile {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--light-text-color);
+    padding: 10px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 5px;
+}
+
+.logo i {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+}
+
+.header-mobile h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.header-mobile h1 span {
+    color: var(--secondary-color);
+}
+
+.subtitle {
+    font-size: 1rem;
+    margin-top: 3px;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* Carte lobby responsive */
+.lobby-card {
+    background-color: var(--card-background);
+    padding: 20px 15px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.lobby-card h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+/* Game info compact */
+.game-info {
+    background-color: #f8f9fa;
+    padding: 12px;
+    border-radius: var(--border-radius);
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.game-id-display {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    font-family: 'Courier New', monospace;
+    font-size: 1.4rem;
+    padding: 8px 15px;
+    border-radius: var(--border-radius);
+    display: inline-block;
+    margin: 8px 0;
+    letter-spacing: 1px;
+    word-break: break-all;
+}
+
+/* Players list optimisé mobile */
+.players-section {
+    margin: 15px 0;
+}
+
+.players-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.players-list {
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius);
+    padding: 10px;
+    max-height: 40vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.player-card {
+    display: flex;
+    align-items: center;
+    padding: 8px 10px;
+    background-color: white;
+    border-radius: var(--border-radius);
+    margin-bottom: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    font-size: 0.9rem;
+}
+
+.player-avatar {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    border-radius: 50%;
+    background-color: #ecf0f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    overflow: hidden;
+}
+
+.player-avatar i {
+    color: #7f8c8d;
+    font-size: 1.2rem;
+}
+
+.player-name {
+    font-weight: bold;
+    flex-grow: 1;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.player-status {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    margin-left: 5px;
+    white-space: nowrap;
+}
+
+.player-status.ready {
+    background-color: var(--success-color);
+}
+
+/* Boutons tactiles */
+.btn {
+    padding: 12px 15px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: bold;
+    margin-top: 8px;
+    width: 100%;
+    touch-action: manipulation;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-success {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.btn-danger {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.hint {
+    margin-top: 8px;
+    font-size: 0.8rem;
+    color: #7f8c8d;
+}
+
+/* Footer compact */
+.footer-mobile {
+    text-align: center;
+    margin-top: 20px;
+    color: #bdc3c7;
+    font-size: 0.8rem;
+    padding: 10px 0;
+}
+
+.decoration i {
+    margin: 0 5px;
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+}
+
+/* Améliorations pour tablettes et desktop */
+@media (min-width: 480px) {
+    .container {
+        padding: 20px;
+        max-width: 600px;
+    }
+    
+    .header-mobile h1 {
+        font-size: 2.8rem;
+    }
+    
+    .lobby-card {
+        padding: 25px 20px;
+    }
+    
+    .game-id-display {
+        font-size: 1.8rem;
+        padding: 10px 20px;
+    }
+}
+
+/* Orientation paysage */
+@media (max-height: 500px) and (orientation: landscape) {
+    .container {
+        padding: 10px;
+    }
+    
+    .header-mobile {
+        margin-bottom: 10px;
+    }
+    
+    .lobby-card {
+        padding: 15px 10px;
+    }
+    
+    .players-list {
+        max-height: 30vh;
+    }
+}

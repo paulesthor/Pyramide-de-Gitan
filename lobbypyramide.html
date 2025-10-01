@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pyramide - Accueil</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body id="page-accueil">
+    <div class="background-overlay"></div>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-guitar"></i>
+                <h1>Pyramide <span>des Gitans</span></h1>
+            </div>
+            <p class="subtitle">Le jeu qui retourne des situations</p>
+        </header>
+
+        <main class="card">
+            <div class="profile-setup">
+                <h2>Crée ton profil</h2>
+                <div class="avatar-upload">
+                    <label for="avatar-upload">
+                        <div class="avatar-preview" id="avatar-preview">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <span class="hint">Ajoute ta photo (optionnel)</span>
+                    </label>
+                    <input type="file" id="avatar-upload" accept="image/*" class="hidden">
+                </div>
+                <div class="input-group">
+                    <label for="username" class="hidden">Pseudo</label>
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="username" placeholder="Ton nom de joueur" required maxlength="15">
+                </div>
+            </div>
+
+            <div class="buttons" id="main-buttons">
+                <button id="create-game" class="btn btn-create">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>Créer une partie</span>
+                </button>
+                <button id="join-game" class="btn btn-join">
+                    <i class="fas fa-search"></i>
+                    <span>Rejoindre</span>
+                </button>
+            </div>
+
+            <form id="join-form" class="hidden">
+                <h2><i class="fas fa-door-open"></i> Rejoindre</h2>
+                <div class="input-group">
+                    <label for="game-id-input" class="hidden">Code de la partie</label>
+                    <i class="fas fa-key"></i>
+                    <input type="text" id="game-id-input" placeholder="Code de la partie" maxlength="4" autocapitalize="characters">
+                </div>
+                <button id="confirm-join" type="button" class="btn btn-confirm">
+                    <i class="fas fa-check"></i>
+                    <span>Valider</span>
+                </button>
+                 <button id="cancel-join" type="button" class="btn btn-secondary">
+                    <i class="fas fa-times"></i>
+                    <span>Annuler</span>
+                </button>
+            </form>
+            
+            <div id="error-message" class="message error hidden"></div>
+        </main>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/lobbypyramide.js"></script>
+</body>
+</html>

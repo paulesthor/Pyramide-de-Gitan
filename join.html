@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Pyramide - Lobby</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="page-lobby">
+
+    <div class="container">
+        <div class="content">
+            <div class="lobby-card">
+                <h2><i class="fas fa-glass-cheers"></i> Salon d'attente</h2>
+    
+                <div class="game-info">
+                    <p>Code de la partie :</p>
+                    <div class="game-id-display" id="display-game-id">...</div>
+                    <p id="player-count">Joueurs : <span class="count">0</span></p>
+                </div>
+    
+                <div class="players-section">
+                    <h3><i class="fas fa-users"></i> Joueurs présents :</h3>
+                    <div id="players-list" class="players-list">
+                        </div>
+                </div>
+    
+                <div class="lobby-actions">
+                    <div id="host-indicator" class="hidden">
+                        <i class="fas fa-crown"></i>
+                        <span>Vous êtes l'hôte. Lancez la partie quand tout le monde est prêt.</span>
+                    </div>
+    
+                    <button id="ready-button" class="btn btn-success">
+                        <i class="fas fa-check"></i> Prêt !
+                    </button>
+                    <p id="ready-status" class="hint">Cliquez quand vous êtes prêt à jouer.</p>
+    
+                    <button id="leave-game" class="btn btn-danger">
+                        <i class="fas fa-door-open"></i> Quitter le salon
+                    </button>
+                </div>
+                <div id="error-message" class="message error hidden"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/join.js"></script>
+</body>
+</html>
